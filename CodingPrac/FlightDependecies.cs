@@ -62,11 +62,11 @@ class Flight1
         }
         if (CanTakeOff)
         {
-            Console.WriteLine($" {Fnumber} is taking off from {DCity} at {DTime}");
+            Console.WriteLine($"Fnumber} is taking off from {DCity} at {DTime}");
         }
         else
         {
-            Console.WriteLine($" {Fnumber} is waiting for other flights to arrive");
+            Console.WriteLine($"{Fnumber} is waiting for other flights to arrive");
         }
     }
 
