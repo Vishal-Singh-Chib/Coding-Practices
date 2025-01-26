@@ -6,7 +6,7 @@ class FlightDependecies
     static void Main2()
     {
         var FlightA = new Flight1("FlighA", "NewYork", "LA", DateTime.Parse("2025-01-23 10:00 PM"));
-        var FlightB = new Flight1("FlighB", "NewYork", "LA", DateTime.Parse("2025-01-23 11:00 PM"));
+        var FlightB = new Flight1("FlighB", "LA", "California", DateTime.Parse("2025-01-23 11:00 PM"));
 
         FlightB.DependsOn(FlightA);
 
@@ -19,13 +19,13 @@ class FlightDependecies
 class Flight1
 {
     public string Fnumber { get; set; }
-    public string ACity { get; set; }
     public string DCity { get; set; }
+    public string ACity { get; set; }
     public DateTime DTime { get; set; }
     public DateTime ATime { get; set; }
     public List<Flight1> Dependecies { get; set; }
 
-    public Flight1(string fnumber, string acity, string dcity, DateTime dtime)
+    public Flight1(string fnumber, string dcity, string acity, DateTime dtime)
     {
         Fnumber = fnumber;
         ACity = acity;
@@ -42,7 +42,7 @@ class Flight1
     public void ArrivesAt(DateTime atime)
     {
         ATime = atime;
-        Console.WriteLine($"Flight1 {Fnumber} is arrived in  {ACity} at {ATime}");
+        Console.WriteLine($" {Fnumber} is arrived in  {ACity} at {ATime}");
     }
 
     public void TryTakeOff()
@@ -62,11 +62,11 @@ class Flight1
         }
         if (CanTakeOff)
         {
-            Console.WriteLine($"Flight1 {Fnumber} is taking off from {DCity} at {DTime}");
+            Console.WriteLine($" {Fnumber} is taking off from {DCity} at {DTime}");
         }
         else
         {
-            Console.WriteLine($"Flight1 {Fnumber} is waiting for other flights to arrive");
+            Console.WriteLine($" {Fnumber} is waiting for other flights to arrive");
         }
     }
 
